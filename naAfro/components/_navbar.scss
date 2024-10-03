@@ -1,0 +1,21 @@
+// mixins are classes to be reused in other css classes. extends is used when a class needs to be reused both in other css classes and html tags
+// % is used for the class instead of . when we don't want that class to be compiled/output into the css folder
+%flex-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.navbar {
+  @extend %flex-layout;
+  padding: $base-padding $base-padding * 2;
+  box-shadow: $base-box-shadow;
+  .site-title {
+    font-size: $font-size-lg;
+  }
+  .container {
+    @extend %flex-layout;
+  }
+}
